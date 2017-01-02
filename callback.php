@@ -1,6 +1,7 @@
 <?php
 define('TOKEN', 'qx2jUnNS95vIVmRwlYBY0V3R6dmWDgxz1wZV3BmBwvknhoPH16lSTznPrtZfser9+XbYMjlV7JFmI3QxGIKsazMTUvE+oedjFXati5vjNxlpstQo6+IXSiME3A8ftJkei80HxVjKVspVYKTdffkfsgdB04t89/1O/w1cDnyilFU=');
 
+$stdout= fopen( 'php://stdout', 'w' );
 
 //callback確認
 $obj = json_decode(file_get_contents('php://input'));
@@ -18,7 +19,8 @@ $post = [
 	]
 ];
 // ログ出力
-fputs(STDOUT, $text);
+fwrite( $stdout, $text);
+
 
 $ch = curl_init("https://api.line.me/v2/bot/message/reply");
 curl_setopt($ch, CURLOPT_POST, true);
@@ -31,6 +33,6 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, array(
 	)
 );
 curl_exec($ch);
-fputs(STDOUT, curl_errno($ch));
+fwrite( $stdout, curl_errno($ch));
 curl_close($ch);
 ?>
