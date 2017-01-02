@@ -13,10 +13,12 @@ $replyToken = $event->{"replyToken"};
 
 $post = [
 	"replyToken" => $replyToken,
-	"messages" => [
-		"type" => "text",
-		"text" => $text
-	]
+	"messages" => array(
+		[
+			"type" => "text",
+			"text" => $text
+		]
+	)
 ];
 
 $ch = curl_init("https://api.line.me/v2/bot/message/reply");
