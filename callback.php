@@ -24,7 +24,8 @@ curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($post));
 curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-    'Content-Type: application/json; charser=UTF-8',
-    'Authorization: Bearer ' . TOKEN;
-    ));
+	'Content-Type: application/json; charser=UTF-8',
+	'Authorization: Bearer ' . TOKEN
+	)
+);
 ?>
