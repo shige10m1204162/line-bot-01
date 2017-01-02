@@ -4,7 +4,7 @@ define('TOKEN', 'qx2jUnNS95vIVmRwlYBY0V3R6dmWDgxz1wZV3BmBwvknhoPH16lSTznPrtZfser
 
 //callback確認
 $obj = json_decode(file_get_contents('php://input'));
-var_dup($obj);
+var_dump($obj);
 //textとreplyToken取得
 $event = $obj->{"events"}[0];
 $text = $event->{"message"}->{"text"};
