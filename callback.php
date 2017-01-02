@@ -28,4 +28,6 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, array(
 	'Authorization: Bearer ' . TOKEN
 	)
 );
+curl_exec($ch);
+curl_close($ch);
 ?>
