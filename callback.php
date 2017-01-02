@@ -18,21 +18,19 @@ $post = [
 		"text" => $text
 	]
 ];
-// ログ出力
-fwrite( $stdout, $text);
-
 
 $ch = curl_init("https://api.line.me/v2/bot/message/reply");
+
 curl_setopt($ch, CURLOPT_POST, true);
 curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($post));
 curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-	'Content-Type: application/json; charser=UTF-8',
+	'Content-Type: application/json',
 	'Authorization: Bearer ' . TOKEN
 	)
 );
-curl_exec($ch);
-fwrite( $stdout, curl_errno($ch));
+$result = curl_exec($ch);
+fwrite( $stdout, $result;
 curl_close($ch);
 ?>
