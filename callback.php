@@ -31,6 +31,6 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, array(
 	)
 );
 $result = curl_exec($ch);
-fwrite( $stdout, $result;
+fwrite( $stdout, $result);
 curl_close($ch);
 ?>
