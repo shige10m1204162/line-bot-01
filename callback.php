@@ -17,6 +17,8 @@ $post = [
 		"text" => $text
 	]
 ];
+// ログ出力
+fputs(STDOUT, $text);
 
 $ch = curl_init("https://api.line.me/v2/bot/message/reply");
 curl_setopt($ch, CURLOPT_POST, true);
@@ -29,5 +31,6 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, array(
 	)
 );
 curl_exec($ch);
+fputs(STDOUT, curl_errno($ch));
 curl_close($ch);
 ?>
